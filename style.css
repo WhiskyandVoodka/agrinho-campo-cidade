@@ -1,0 +1,262 @@
+/* === FONTES E RESET === */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* === BOTÃO DE TEMA === */
+#toggle-tema {
+  display: none;
+}
+
+.botao-tema {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #333;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1000;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.botao-tema:hover {
+  background-color: #555;
+}
+
+/* === CONTAINER GERAL === */
+.site {
+  background-color: #0e0e0e;
+  color: #f5f5f5;
+  line-height: 1.6;
+  padding-bottom: 2rem;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* === ANIMAÇÃO DE APARECIMENTO === */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === CABEÇALHO === */
+.site header {
+  background-color: #211AEE;
+  padding: 2rem 1rem;
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.site header img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* === NAVEGAÇÃO === */
+.site nav {
+  position: sticky;
+  top: 0;
+  background-color: #121212;
+  padding: 1rem;
+  text-align: center;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+.site nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.site nav ul li {
+  margin: 0 1rem;
+}
+
+.site nav ul li a {
+  color: #64ffda;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.site nav ul li a:hover {
+  color: #00bcd4;
+}
+
+/* === CONTEÚDO === */
+.site main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.site h2 {
+  color: #ffeb3b;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  transition: color 0.4s ease;
+  text-align: center;
+}
+
+.site h3 {
+  color: #c27c20;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  transition: color 0.4s ease;
+}
+
+.site p {
+  margin-bottom: 1rem;
+  transition: color 0.4s ease;
+}
+
+.site .highlight-box {
+  background-color: #1c1c1c;
+  padding: 1rem;
+  border-left: 4px solid #64ffda;
+  margin: 2rem 0;
+  transition: background-color 0.4s ease, border-left 0.4s ease, color 0.4s ease;
+}
+
+.site .stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.site .stat-card {
+  background-color: #121212;
+  border: 1px solid #333;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.site .stat-number {
+  font-size: 2rem;
+  color: #00bcd4;
+  font-weight: bold;
+  transition: color 0.4s ease;
+}
+
+.site .stat-label {
+  font-size: 0.9rem;
+  color: #ccc;
+  transition: color 0.4s ease;
+}
+
+.site .source {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: -0.5rem;
+  transition: color 0.4s ease;
+}
+
+.site .image-suggestion {
+  background: #1a1a1a;
+  padding: 1rem;
+  border-left: 4px solid #00bcd4;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #ddd;
+  transition: background-color 0.4s ease, color 0.4s ease, border-left 0.4s ease;
+}
+
+/* === RODAPÉ === */
+.site footer {
+  background-color: #121212;
+  color: #888;
+  text-align: center;
+  font-size: 0.9rem;
+  padding-top: 1rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: -2rem;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* === TEMA CLARO ATIVADO === */
+#toggle-tema:checked ~ .site {
+  background-color: #f5f5f5;
+  color: #121212;
+}
+
+#toggle-tema:checked ~ .site nav {
+  background-color: #e0e0e0;
+}
+
+#toggle-tema:checked ~ .site nav ul li a {
+  color: #00796b;
+}
+
+#toggle-tema:checked ~ .site h2{
+  color: #d80101;
+}
+
+#toggle-tema:checked ~ .site h3 {
+  color: #d88d01;
+}
+
+#toggle-tema:checked ~ .site .highlight-box {
+  background-color: #ffffff;
+  border-left-color: #00796b;
+}
+
+#toggle-tema:checked ~ .site .stat-card {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+}
+
+#toggle-tema:checked ~ .site .stat-number {
+  color: #00796b;
+}
+
+#toggle-tema:checked ~ .site .stat-label {
+  color: #181818;
+}
+
+#toggle-tema:checked ~ .site .image-suggestion {
+  background-color: #eeeeee;
+  color: #333;
+  border-left-color: #00bcd4;
+}
+
+#toggle-tema:checked ~ .site .source {
+  color: #616161;
+}
+
+#toggle-tema:checked ~ .site footer {
+  background-color: #e0e0e0;
+  color: #181818;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* altura do nav */
+}
